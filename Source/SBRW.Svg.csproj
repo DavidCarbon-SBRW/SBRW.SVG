@@ -1,13 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net6.0;netcoreapp3.1;netstandard2.1;netstandard2.0;net462</TargetFrameworks>
+    <TargetFrameworks>net6.0;netcoreapp3.1;netstandard2.1;netstandard2.0;net461;net462</TargetFrameworks>
     <PackageLicenseExpression>MS-PL</PackageLicenseExpression>
+    <Version>0.3.9</Version>
     <RootNamespace>Svg</RootNamespace>
-    <AssemblyName>Svg</AssemblyName>
+    <AssemblyName>SBRW.Svg</AssemblyName>
     <IsPackable>true</IsPackable>
     <Company></Company>
     <Authors>davescriven, jvenema, mrbean-bremen, H1Gdev, Wiesław Šoltés, owaits, ddpruitt, Ralf1108, Tebjan Halm, and others</Authors>
-    <PackageId>Svg</PackageId>
+    <PackageId>SBRW.Svg</PackageId>
     <Product>SVG Rendering Library</Product>
     <Summary>SVG Rendering Library</Summary>
     <Description>
@@ -26,11 +27,12 @@
     <PackageTags>svg, vector graphics, rendering</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageReleaseNotes>Fixed a regression in loading embedded images (see Release Notes: http://svg-net.github.io/SVG/doc/ReleaseNotes.html).
     </PackageReleaseNotes>
-    <PackageProjectUrl>https://github.com/svg-net/SVG</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/DavidCarbon-SBRW/SBRW.SVG</PackageProjectUrl>
     <PackageIconUrl>https://www.w3.org/Icons/SVG/svg-logo-v.png</PackageIconUrl>
     <PackageIcon>svg-logo-v.png</PackageIcon>
     <LangVersion>10.0</LangVersion>
@@ -49,37 +51,38 @@
     <None Include="svg-logo-v.png" Pack="true" PackagePath="" />
   </ItemGroup>
 
-  <PropertyGroup Condition="'$(TargetFramework)'=='net462'">
-    <Title>Svg for .Net Framework 4.6.2</Title>
+  <PropertyGroup Condition="'$(TargetFramework)'=='net461' Or '$(TargetFramework)'=='net462'">
+    <Title>Svg for .Net Framework 4.6.X</Title>
     <DefineConstants>$(DefineConstants);NETFULL;Net4</DefineConstants>
     <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
   </PropertyGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)'=='net462'">
+  <ItemGroup Condition="'$(TargetFramework)'=='net461' Or '$(TargetFramework)'=='net462'">
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="All" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0' Or '$(TargetFramework)' == 'netstandard2.1' Or '$(TargetFramework)' == 'netcoreapp2.1' Or '$(TargetFramework)' == 'netcoreapp3.1' Or '$(TargetFramework)' == 'net6.0'">
     <PackageReference Include="System.Drawing.Common" Version="5.0.3" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0' Or '$(TargetFramework)' == 'net462'">
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0' Or '$(TargetFramework)' == 'net461' Or '$(TargetFramework)'=='net462'">
     <PackageReference Include="System.Memory" Version="4.5.5" />
   </ItemGroup>
 
-  <!-- Mac specific include -->
+    <!-- Mac specific include -->
 
   <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp2.1' Or '$(TargetFramework)' == 'netcoreapp3.1' Or '$(TargetFramework)' == 'net6.0'">
-    <PackageReference Include="runtime.osx.10.10-x64.CoreCompat.System.Drawing" Version="5.8.64" />
+    <PackageReference Include="runtime.osx.10.10-x64.CoreCompat.System.Drawing" Version="6.0.5.128" />
   </ItemGroup>
 
   <ItemGroup>
@@ -87,12 +90,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="ExCSS" Version="4.2.3" />
-    <PackageReference Include="Nerdbank.GitVersioning" Version="3.3.37">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
+      
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
+    <PackageReference Include="SBRW.ExCSS" Version="4.2.4" />
   </ItemGroup>
 
   <ItemGroup>

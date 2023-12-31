@@ -2,11 +2,11 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFrameworks>netcoreapp3.1;net462</TargetFrameworks>
+    <TargetFrameworks>netcoreapp3.1;net461;net462</TargetFrameworks>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Source\Svg.csproj" />
+    <ProjectReference Include="..\..\Source\SBRW.Svg.csproj" />
   </ItemGroup>
 
 </Project>

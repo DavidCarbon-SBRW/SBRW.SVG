@@ -16,7 +16,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Source\Svg.csproj" />
+    <ProjectReference Include="..\..\Source\SBRW.Svg.csproj" />
   </ItemGroup>
 
   <ItemGroup>

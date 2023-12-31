@@ -299,7 +299,7 @@ namespace Svg.Css
             return f => func(inFunc(f));
         }
 
-#if NETSTANDARD2_0 || NET462_OR_GREATER
+#if NETSTANDARD2_0 || NET461_OR_GREATER
         private static HashSet<T> ToHashSet<T>(this IEnumerable<T> enumarable)
         {
             var result = new HashSet<T>();
