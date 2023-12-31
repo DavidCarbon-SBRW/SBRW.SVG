@@ -33,7 +33,7 @@ jobs:
         GHUserName: ${{ secrets.SBRW_LIBRARIES_LAUNCHER_USERNAME }}
         Password: ${{ secrets.SBRW_LIBRARIES_LAUNCHER_OUTHTOKEN }}
     - name: Restore Custom NuGet Packages
-      run: dotnet restore --ignore-failed-sources      
+      run: dotnet restore "Source\SBRW.Svg.csproj" --ignore-failed-sources      
     - name: Build
       run: dotnet build "Source\SBRW.Svg.csproj" --configuration Release -p:Version=${{steps.get_version.outputs.version-without-v}}
     - name: Pack
