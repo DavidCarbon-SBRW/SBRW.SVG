@@ -7,7 +7,7 @@
         <IsPackable>true</IsPackable>
         <Company></Company>
         <Authors>davescriven, jvenema, mrbean-bremen, H1Gdev, Wiesław Šoltés, owaits, ddpruitt, Ralf1108, Tebjan Halm, and others</Authors>
-        <PackageId>Svg</PackageId>
+        <PackageId>SBRW.Svg</PackageId>
         <Product>SVG Rendering Library</Product>
         <Summary>SVG Rendering Library</Summary>
         <Description>
