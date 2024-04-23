@@ -77,17 +77,12 @@
         <Compile Remove=".\Resources\svg11.dtd" />
     </ItemGroup>
 
-    <ItemGroup Condition="'$(TargetFramework)'=='net461' Or '$(TargetFramework)'=='net462'">
-        <Reference Include="System" />
-        <Reference Include="System.Core" />
-        <Reference Include="System.Data" />
-        <Reference Include="System.Drawing" />
-        <Reference Include="System.Web" />
-        <Reference Include="System.Xml" />
-        <PackageReference Include="System.Memory" Version="4.5.5" />
-    </ItemGroup>
+    <PropertyGroup Condition="'$(TargetFramework)'=='net461' Or '$(TargetFramework)'=='net462'">
+        <Title>Svg for .Net Framework 4.6.X</Title>
+        <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
+    </PropertyGroup>
 
-    <ItemGroup Condition="'$(TargetFramework)' == 'net472'">
+    <ItemGroup Condition="'$(TargetFramework)'=='net461' Or '$(TargetFramework)'=='net462' Or '$(TargetFramework)'=='net472' Or '$(TargetFramework)'=='net481'">
         <Reference Include="System" />
         <Reference Include="System.Core" />
         <Reference Include="System.Data" />
@@ -98,15 +93,8 @@
         <PackageReference Include="System.Memory" Version="4.5.5" />
     </ItemGroup>
 
-    <ItemGroup Condition="'$(TargetFramework)' == 'net481'">
-        <Reference Include="System" />
-        <Reference Include="System.Core" />
-        <Reference Include="System.Data" />
-        <Reference Include="System.Drawing" />
-        <Reference Include="System.Web" />
-        <Reference Include="System.Net.Http" />
-        <Reference Include="System.Xml" />
-        <PackageReference Include="System.Memory" Version="4.5.5" />
+    <ItemGroup>
+        <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="All" />
     </ItemGroup>
 
     <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
@@ -136,10 +124,6 @@
 
     <ItemGroup>
         <PackageReference Include="SBRW.ExCSS" Version="4.2.5" />
-        <PackageReference Include="Nerdbank.GitVersioning" Version="3.3.37">
-            <PrivateAssets>all</PrivateAssets>
-            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-        </PackageReference>
         <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
     </ItemGroup>
 

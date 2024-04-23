@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Fizzler;
-using ExCSS;
+using SBRW.ExCSS;
 
 namespace Svg.Css
 {

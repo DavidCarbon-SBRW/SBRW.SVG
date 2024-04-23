@@ -28,7 +28,7 @@
         <DefineConstants Condition="$(TargetFramework.StartsWith('net8'))">$(DefineConstants);NETNEXT;NET80</DefineConstants>
     </PropertyGroup>
 
-    <ItemGroup Condition=" '$(TargetFramework)' == 'net462'">
+    <ItemGroup Condition="'$(TargetFramework)'=='net461' Or '$(TargetFramework)'=='net462'">
         <Reference Include="System.Design" />
     </ItemGroup>
 
